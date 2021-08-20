@@ -92,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 _move = transform.right * _x + transform.forward * _z;
 
-        _controller.Move(_move * _spd * Time.deltaTime);
+        _controller.Move(_move.normalized * _spd * Time.deltaTime);
 
         _velocity.y += _gravity * Time.deltaTime;
 
