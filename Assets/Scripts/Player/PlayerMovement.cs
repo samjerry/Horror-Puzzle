@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float _runSpd = 1.5f;
     float _spd;
 
+    Vector3 _dir;
+
     void Start()
     {
         _pMovement = MovementTypes.walk;
@@ -23,23 +25,23 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetAxis("Vertical") > 0)
         {
-            var a = transform.TransformDirection(0, 0, 50);
-            transform.position += a * _spd;
+            _dir = transform.TransformDirection(0, 0, 50);
+            transform.position += _dir * _spd;
         }
         if (Input.GetAxis("Vertical") < 0)
         {
-            var b = transform.TransformDirection(0, 50, 0);
-            transform.position += b * _spd;
+            _dir = transform.TransformDirection(0, 50, 0);
+            transform.position += _dir * _spd;
         }
         if (Input.GetAxis("Horizontal") > 0)
         {
-            var c = transform.TransformDirection(50, 0, 0);
-            transform.position += c * _spd;
+            _dir = transform.TransformDirection(50, 0, 0);
+            transform.position += _dir * _spd;
         }
         if (Input.GetAxis("Horizontal") < 0)
         {
-            var d = transform.TransformDirection(-50, 0, 0);
-            transform.position += d * _spd;
+            _dir = transform.TransformDirection(-50, 0, 0);
+            transform.position += _dir * _spd;
         }
     }
 
