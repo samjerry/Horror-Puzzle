@@ -11,37 +11,37 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float _walkSpd = 1;
     [SerializeField] float _crouchSpd = 0.5f;
     [SerializeField] float _runSpd = 1.5f;
-    float _spd;
+    [SerializeField] float _spd;
 
-    Vector3 _dir;
+    bool _isGrounded;
+
+    Vector3 _pos;
 
     void Start()
     {
+        _pos = transform.position;
         _pMovement = MovementTypes.walk;
+
         SetSpeed(_pMovement.ToString());
     }
 
     void Update()
     {
-        if (Input.GetAxis("Vertical") > 0)
+        if (Input.GetKey(KeyCode.D))
         {
-            _dir = transform.TransformDirection(0, 0, 50);
-            transform.position += _dir * _spd;
+            _pos += Vector3.right * _spd * Time.deltaTime;
         }
-        if (Input.GetAxis("Vertical") < 0)
+        if (Input.GetKey(KeyCode.A))
         {
-            _dir = transform.TransformDirection(0, 50, 0);
-            transform.position += _dir * _spd;
+            _pos += Vector3.left * _spd * Time.deltaTime;
         }
-        if (Input.GetAxis("Horizontal") > 0)
+        if (Input.GetKey(KeyCode.W))
         {
-            _dir = transform.TransformDirection(50, 0, 0);
-            transform.position += _dir * _spd;
+            _pos += Vector3.forward * _spd * Time.deltaTime;
         }
-        if (Input.GetAxis("Horizontal") < 0)
+        if (Input.GetKey(KeyCode.S))
         {
-            _dir = transform.TransformDirection(-50, 0, 0);
-            transform.position += _dir * _spd;
+            _pos += Vector3.back * _spd * Time.deltaTime;
         }
     }
 
