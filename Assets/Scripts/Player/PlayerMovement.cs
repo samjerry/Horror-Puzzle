@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private KeyCode _sprintKey;
 
     [SerializeField] private MovementTypes _pMovement;
+    public string pMoveType = "";
 
     [SerializeField] private CharacterController _controller;
 
@@ -45,6 +46,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (pMoveType != _pMovement.ToString())
+        {
+            pMoveType = _pMovement.ToString();
+        }
+
         _isGrounded = Physics.CheckSphere(_groundCheck.position, _checkDistance, groundMask);
 
         if (_isGrounded && _velocity.y < 0)

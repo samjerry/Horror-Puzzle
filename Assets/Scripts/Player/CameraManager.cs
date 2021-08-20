@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    [SerializeField] GameObject _target;
-    [SerializeField] float _yOffset;
+    [SerializeField] private PlayerMovement _pMovement;
 
-    [SerializeField] float _sensitivityX = 100F;
-    [SerializeField] float _sensitivityY = 100F;
+    [SerializeField] private GameObject _target;
+    [SerializeField] private float _yOffset;
 
-    [SerializeField] float _minimumX = -90F;
-    [SerializeField] float _maximumX = 90F;
+    [SerializeField] private float _sensitivityX = 100F;
+    [SerializeField] private float _sensitivityY = 100F;
 
-    [SerializeField] float _xRot;
-    [SerializeField] float _yRot;
+    [SerializeField] private float _minimumX = -90F;
+    [SerializeField] private float _maximumX = 90F;
+
+    [SerializeField] private float _xRot;
+    [SerializeField] private float _yRot;
 
 
     private void Start()
