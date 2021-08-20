@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class FlashlightManager : MonoBehaviour
 {
-    private bool _isHeld;
+    private bool _isHeld = true;
 
     [SerializeField] private GameObject _lightSource;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && _isHeld && _lightSource.active)
+        if (Input.GetKeyDown(KeyCode.F) && _isHeld)
         {
-            _lightSource.SetActive(false);
-        } 
-        
-        else if (Input.GetKeyDown(KeyCode.F) && _isHeld && !_lightSource.active)
-        {
-            _lightSource.SetActive(false);
+            _lightSource.GetComponent<Light>().enabled = !_lightSource.GetComponent<Light>().enabled;
         }
     }
 }
