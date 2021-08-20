@@ -891,10 +891,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b86e765dcaf85468135384fb76709f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _forwardKey: 119
+  _backwardKey: 115
+  _leftKey: 97
+  _rightKey: 100
+  _crouchKey: 306
+  _walkKey: 0
+  _sprintKey: 304
   _pMovement: 0
-  _walkSpd: 1
-  _crouchSpd: 0.5
   _runSpd: 1.5
+  _walkSpd: 1
+  _crouchSpd: 0.25
+  _sprintSpd: 1.5
+  _spd: 0
 --- !u!1 &850235320
 GameObject:
   m_ObjectHideFlags: 0
