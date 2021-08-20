@@ -18,6 +18,8 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private float _xRot;
     [SerializeField] private float _yRot;
 
+    [SerializeField] private Transform _headPos;
+    [SerializeField] private Transform _crouchPos;
 
     private void Start()
     {
@@ -38,6 +40,16 @@ public class CameraManager : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(_xRot, 0f, 0f);
         _target.transform.Rotate(Vector3.up * _mouseX);
+
+        if (transform.position != _headPos.position && _pMovement.pMoveType != "crouch")
+        {
+            transform.position = _headPos.position;
+        }
+
+        if (_pMovement.pMoveType == "crouch" && transform.position != _crouchPos.position)
+        {
+            transform.position = _crouchPos.position;
+        }
 
     }
 }
