@@ -6,18 +6,18 @@ public class FlashlightManager : MonoBehaviour
 {
     private bool _isHeld;
 
-    [SerializeField] private Light _lightSource;
+    [SerializeField] private GameObject _lightSource;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && _isHeld)
+        if (Input.GetKeyDown(KeyCode.F) && _isHeld && _lightSource.active)
         {
-
+            _lightSource.SetActive(false);
+        } 
+        
+        else if (Input.GetKeyDown(KeyCode.F) && _isHeld && !_lightSource.active)
+        {
+            _lightSource.SetActive(false);
         }
-    }
-
-    private void Toggle()
-    {
-
     }
 }
