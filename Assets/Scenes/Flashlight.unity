@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &178243875 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2249891021191531238, guid: 54f5a5ad8ac7b6c42839ad751d90e856, type: 3}
+  m_PrefabInstance: {fileID: 640624185}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &251461939
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,13 +250,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434620094}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.664, y: 2.805, z: -24.175}
+  m_LocalPosition: {x: -5.7639995, y: 1.705, z: -11.584999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1027327402}
   - {fileID: 505929808}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 178243875}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &434620097
 MonoBehaviour:
@@ -293,7 +298,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 505929807}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.335, y: -1.3450297, z: 11.947}
+  m_LocalPosition: {x: 6.335, y: -1.3450297, z: 11.768}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 434620095}
@@ -729,7 +734,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027327401}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.437058, y: -1.3450297, z: 11.672504}
+  m_LocalPosition: {x: 6.33, y: -1.35, z: 12.292}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 434620095}
