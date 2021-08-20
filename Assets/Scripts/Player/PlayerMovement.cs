@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 enum MovementTypes { walk, run, sprint, crouch};
-
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] KeyCode _forwardKey;
@@ -15,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] KeyCode _sprintKey;
 
     [SerializeField] MovementTypes _pMovement;
+    
 
     [SerializeField] float _runSpd = 1f;
     [SerializeField] float _walkSpd = 0.5f;
@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        
         _pMovement = MovementTypes.run;
 
         SetSpeed();
@@ -34,18 +35,20 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
+        /// <summary>
+        /// Keyboard Input.
+        /// </summary>
+
         if (Input.GetKey(_sprintKey))
         {
             _pMovement = MovementTypes.sprint;
             SetSpeed();
         }
-        
         if (Input.GetKey(_walkKey))
         {
             _pMovement = MovementTypes.walk;
             SetSpeed();
         }
-
         if (Input.GetKey(_crouchKey))
         {
             _pMovement = MovementTypes.crouch;
@@ -56,26 +59,22 @@ public class PlayerMovement : MonoBehaviour
                 _spd = _crouchSpd * 1.5f;
             }
         }
-
         if (Input.GetKeyUp(_crouchKey) && !Input.GetKey(_sprintKey) && !Input.GetKey(_walkKey))
         {
             _pMovement = MovementTypes.run;
             SetSpeed();
         }
-        
         if (Input.GetKeyUp(_walkKey) && !Input.GetKey(_crouchKey) && !Input.GetKey(_sprintKey))
         {
             _pMovement = MovementTypes.run;
             SetSpeed();
         }
-
         if (Input.GetKeyUp(_sprintKey) && !Input.GetKey(_crouchKey) && !Input.GetKey(_walkKey))
         {
             _pMovement = MovementTypes.run;
             SetSpeed();
         } 
         
-
         if (Input.GetKey(_rightKey))
         {
             transform.position += (Vector3.right * _spd * Time.deltaTime);
@@ -92,6 +91,9 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position += (Vector3.back * _spd * Time.deltaTime);
         }
+
+        transform.rotation = GameObject.Find("Main Camera").transform.rotation;
+
     }
 
     void SetSpeed()
@@ -115,4 +117,5 @@ public class PlayerMovement : MonoBehaviour
                 break;
         }
     }
+
 }

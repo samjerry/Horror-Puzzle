@@ -857,7 +857,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727144571}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.31, y: 1, z: 1.33}
+  m_LocalPosition: {x: -4.81, y: 1, z: -7.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -896,11 +896,11 @@ MonoBehaviour:
   _leftKey: 97
   _rightKey: 100
   _crouchKey: 306
-  _walkKey: 0
+  _walkKey: 308
   _sprintKey: 304
   _pMovement: 0
-  _runSpd: 1.5
-  _walkSpd: 1
+  _runSpd: 1
+  _walkSpd: 0.5
   _crouchSpd: 0.25
   _sprintSpd: 1.5
   _spd: 0
@@ -1424,6 +1424,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 727144571}
   _yOffset: 0
+  _axes: 1
+  _sensitivityX: 15
+  _sensitivityY: 15
+  _minimumX: -360
+  _maximumX: 360
+  _minimumY: -60
+  _maximumY: 60
+  _rotationX: 0
+  _rotationY: 0
+  _frameCounter: 20
 --- !u!1 &1634018191
 GameObject:
   m_ObjectHideFlags: 0
