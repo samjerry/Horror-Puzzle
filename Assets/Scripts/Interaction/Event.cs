@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Event : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Vector3 _newPos;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] private Color _newColor;
+
+    [SerializeField] private float _rotAmount;
+    [SerializeField] private float _moveSpd;
+
+    public void MoveObjectEvent() => transform.position = Vector3.MoveTowards(transform.position, _newPos, _moveSpd * Time.deltaTime);
+
+    public void ChangeMatEvent() => GetComponent<Material>().SetColor("Albedo", _newColor);
+
+    public void RotateEvent()
     {
-        
+
     }
+    
 }

@@ -234,6 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trigger: 0
   _amount: 0
+  _amountGoal: 0
   _range: 0
   _isTriggered: 0
   _triggerObjects:
@@ -415,6 +416,7 @@ GameObject:
   - component: {fileID: 1224844367}
   - component: {fileID: 1224844366}
   - component: {fileID: 1224844365}
+  - component: {fileID: 1224844368}
   m_Layer: 0
   m_Name: Event
   m_TagString: Untagged
@@ -469,7 +471,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: fc26908c4677b2448ae23ba2cda0e92a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -499,6 +501,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224844363}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1224844368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224844363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43aee94ba744383489164c6365f2c3e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _newPos: {x: 1.191, y: 0.808, z: -5.205}
+  _newColor: {r: 0.0012850851, g: 0.4528302, b: 0, a: 0}
+  _rotAmount: 90
+  _moveSpd: 0.5
 --- !u!1 &1322535355
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,6 +854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trigger: 2
   _amount: 0
+  _amountGoal: 0
   _range: 0
   _isTriggered: 0
   _triggerObjects:
@@ -886,6 +905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trigger: 1
   _amount: 0
+  _amountGoal: 0
   _range: 0
   _isTriggered: 0
   _triggerObjects:
