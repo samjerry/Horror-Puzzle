@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+enum TriggerTypes { Button, Area, Amount}
 public class EventTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] TriggerTypes _trigger;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] private int _amount = 0;
+
+    [SerializeField] private float _range;
+
+    [SerializeField] private bool _isTriggered = false;
+
+    [SerializeField] List<GameObject> _triggerObjects;
+    
+
 }
