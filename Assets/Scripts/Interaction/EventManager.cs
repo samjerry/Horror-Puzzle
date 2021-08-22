@@ -41,18 +41,5 @@ public class EventManager : MonoBehaviour
     }
 
     public void ToggleLight() => _light.enabled = !_light.enabled;
-    /*
-    {
-        if (_light.intensity == 1f)
-        {
-            Debug.Log("off");
-            _light.intensity = 0;
-        }
-        else
-        {
-            Debug.Log("on");
-            _light.intensity = 1;
-        } 
-    }
-    */
+   
 }
