@@ -1,16 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
 public class EventManager : MonoBehaviour
 {
     public enum EventType
-    { 
-        Light, 
-        Move, 
-        Unlock, 
-        Audio 
+    {
+        Light,
+        Move,
+        Unlock,
+        Audio
     }
 
     public EventType eType;
@@ -26,6 +25,8 @@ public class EventManager : MonoBehaviour
     /// <summary>
     /// Audio Event
     /// </summary>
+    private GameObject _source;
+    private AudioSource _aSource;
     public AudioClip audio;
 
     /// <summary>
@@ -42,6 +43,14 @@ public class EventManager : MonoBehaviour
         {
             _light = transform.GetChild(0).GetComponent<Light>();
         }
+
+        if (eType == EventType.Audio)
+        {
+            Debug.Log(_source);
+            _source = this.gameObject;
+            _aSource = _source.GetComponent<AudioSource>();
+            _aSource.clip = audio;
+        }
     }
 
     public void ToggleLight()
@@ -55,6 +64,12 @@ public class EventManager : MonoBehaviour
         isTriggered = !isTriggered;
 
         StartCoroutine(LerpPosition(targetPos, 3));
+    }
+
+    public void PlayAudio()
+    {
+        Debug.Log(_aSource);
+        _aSource.Play();
     }
 
     IEnumerator LerpPosition(Vector3 targetPosition, float duration)
