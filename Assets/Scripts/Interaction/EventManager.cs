@@ -32,6 +32,7 @@ public class EventManager : MonoBehaviour
     /// </summary>
     public Vector3 targetPos;
     public float moveSpd;
+    private float _margin = 0.2f;
 
 
     void Start()
@@ -52,7 +53,7 @@ public class EventManager : MonoBehaviour
     {
         isTriggered = !isTriggered;
         Debug.Log("Initiate MoveObject() on " + this.gameObject.name + " from " + transform.position + " to " + targetPos + " with speed " + moveSpd);
-        while (transform.position != targetPos)
+        while (Vector3.Distance(transform.position, targetPos) <= _margin)
         {
             transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * moveSpd);
         }
