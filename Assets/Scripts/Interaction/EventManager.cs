@@ -21,6 +21,7 @@ public class EventManager : MonoBehaviour
     /// Universal Event
     /// </summary>
     public bool isTriggered;
+    public bool ReverseAble;
 
     /// <summary>
     /// Audio Event
@@ -52,10 +53,21 @@ public class EventManager : MonoBehaviour
     public void MoveObject()
     {
         isTriggered = !isTriggered;
-        Debug.Log("Initiate MoveObject() on " + this.gameObject.name + " from " + transform.position + " to " + targetPos + " with speed " + moveSpd);
-        while (Vector3.Distance(transform.position, targetPos) <= _margin)
+
+        StartCoroutine(LerpPosition(targetPos, 3));
+    }
+
+    IEnumerator LerpPosition(Vector3 targetPosition, float duration)
+    {
+        float time = 0;
+        Vector3 startPosition = transform.position;
+
+        while (time < duration)
         {
-            transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * moveSpd);
+            transform.position = Vector3.Lerp(startPosition, targetPosition, time / duration);
+            time += Time.deltaTime;
+            yield return null;
         }
+        transform.position = targetPosition;
     }
 }
