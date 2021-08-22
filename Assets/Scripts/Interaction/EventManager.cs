@@ -51,7 +51,10 @@ public class EventManager : MonoBehaviour
     public void MoveObject()
     {
         isTriggered = !isTriggered;
-        Debug.Log("Initiate MoveObject()");
-        transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * moveSpd);
+        Debug.Log("Initiate MoveObject() on " + this.gameObject.name + " from " + transform.position + " to " + targetPos + " with speed " + moveSpd);
+        while (transform.position != targetPos)
+        {
+            transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * moveSpd);
+        }
     }
 }
