@@ -235,6 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventReceivers:
   - {fileID: 476606569}
+  - {fileID: 476606569}
 --- !u!114 &70282162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,6 +254,18 @@ MonoBehaviour:
       - m_Target: {fileID: 476606571}
         m_TargetAssemblyTypeName: EventManager, Assembly-CSharp
         m_MethodName: ToggleLight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 476606571}
+        m_TargetAssemblyTypeName: EventManager, Assembly-CSharp
+        m_MethodName: MoveObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -541,7 +554,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 466525226}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.42, y: 8.54, z: 22.93}
+  m_LocalPosition: {x: 8.65, y: 8.54, z: 22.93}
   m_LocalScale: {x: 1, y: 13.856687, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -591,7 +604,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff14c056faedbdb4fb71f83df4fc036d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _eType: 0
+  eType: 0
+  isTriggered: 0
+  audio: {fileID: 0}
+  targetPos: {x: 0, y: 0, z: 0}
+  moveSpd: 0
 --- !u!1 &693684113 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3670852637258439556, guid: 54f5a5ad8ac7b6c42839ad751d90e856, type: 3}
@@ -1018,6 +1035,7 @@ GameObject:
   - component: {fileID: 1904756578}
   - component: {fileID: 1904756577}
   - component: {fileID: 1904756576}
+  - component: {fileID: 1904756580}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -1096,9 +1114,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1904756575}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -1.95, y: 8.54, z: 22.93}
+  m_LocalPosition: {x: 5, y: 8.5, z: 22.94}
   m_LocalScale: {x: 1, y: 6.928345, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1904756580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904756575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff14c056faedbdb4fb71f83df4fc036d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eType: 1
+  isTriggered: 0
+  audio: {fileID: 0}
+  targetPos: {x: -2, y: 8.5, z: 22.94}
+  moveSpd: 0

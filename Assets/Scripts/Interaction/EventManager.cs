@@ -32,6 +32,7 @@ public class EventManager : MonoBehaviour
     /// </summary>
     private Vector3 _curPos;
     public Vector3 targetPos;
+    public int moveSpd;
 
 
     void Start()
@@ -40,6 +41,16 @@ public class EventManager : MonoBehaviour
         _curPos = transform.position;
     }
 
-    public void ToggleLight() => _light.enabled = !_light.enabled;
-   
+    public void ToggleLight()
+    {
+        isTriggered = !isTriggered;
+        _light.enabled = !_light.enabled;
+    }
+
+    public void MoveObject()
+    {
+        isTriggered = !isTriggered;
+        Debug.Log("Initiate MoveObject()");
+        _curPos = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * moveSpd);
+    }
 }

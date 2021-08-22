@@ -8,8 +8,20 @@ public class EventManagerEditor : Editor
 {
     EventManager _eManager;
 
+    /// <summary>
+    /// universal events
+    /// </summary>
     SerializedProperty isTriggeredProp;
+  
+    /// <summary>
+    /// Move Event
+    /// </summary>
     SerializedProperty targetPosProp;
+    SerializedProperty moveSpdProp;
+    
+    /// <summary>
+    /// Audio Event
+    /// </summary>
     SerializedProperty audioProp;
 
     void OnEnable()
@@ -44,9 +56,11 @@ public class EventManagerEditor : Editor
                 {
                     isTriggeredProp = serializedObject.FindProperty("isTriggered");
                     targetPosProp = serializedObject.FindProperty("targetPos");
+                    moveSpdProp = serializedObject.FindProperty("moveSpd");
 
                     EditorGUILayout.PropertyField(isTriggeredProp, new GUIContent("Event Triggered"));
                     EditorGUILayout.PropertyField(targetPosProp, new GUIContent("Target Position"));
+                    EditorGUILayout.PropertyField(moveSpdProp, new GUIContent("Movement Speed"));
                     //_eManager.targetPos = 
                     break;
                 }
