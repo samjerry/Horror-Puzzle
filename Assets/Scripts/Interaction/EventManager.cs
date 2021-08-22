@@ -17,12 +17,22 @@ public class EventManager : MonoBehaviour
 
     private Light _light;
 
+    /// <summary>
+    /// Universal Event
+    /// </summary>
+    public bool isTriggered;
+
+    /// <summary>
+    /// Audio Event
+    /// </summary>
     public AudioSource audio;
 
+    /// <summary>
+    /// Move Event
+    /// </summary>
     private Vector3 _curPos;
     public Vector3 targetPos;
 
-    public bool isTriggered;
 
     void Start()
     {
