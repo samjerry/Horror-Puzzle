@@ -235,7 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventReceivers:
   - {fileID: 476606569}
-  - {fileID: 476606569}
+  - {fileID: 1904756575}
 --- !u!114 &70282162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,7 +263,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 476606571}
+      - m_Target: {fileID: 1904756580}
         m_TargetAssemblyTypeName: EventManager, Assembly-CSharp
         m_MethodName: MoveObject
         m_Mode: 1

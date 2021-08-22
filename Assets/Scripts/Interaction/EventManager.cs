@@ -25,14 +25,14 @@ public class EventManager : MonoBehaviour
     /// <summary>
     /// Audio Event
     /// </summary>
-    public AudioSource audio;
+    public AudioClip audio;
 
     /// <summary>
     /// Move Event
     /// </summary>
     private Vector3 _curPos;
     public Vector3 targetPos;
-    public int moveSpd;
+    public float moveSpd;
 
 
     void Start()

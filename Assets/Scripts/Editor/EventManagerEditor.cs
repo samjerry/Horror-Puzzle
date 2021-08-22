@@ -39,7 +39,9 @@ public class EventManagerEditor : Editor
                     isTriggeredProp = serializedObject.FindProperty("isTriggered");
 
                     EditorGUILayout.PropertyField(isTriggeredProp, new GUIContent("Event Triggered"));
-                    //_eManager.isTriggered = 
+                   
+                    _eManager.isTriggered = isTriggeredProp.boolValue;
+
                     break;
                 }
             case EventManager.EventType.Audio:
@@ -48,8 +50,12 @@ public class EventManagerEditor : Editor
                     audioProp = serializedObject.FindProperty("audio");
 
                     EditorGUILayout.PropertyField(isTriggeredProp, new GUIContent("Event Triggered"));
-                    EditorGUILayout.PropertyField(audioProp, new GUIContent("Audio File"));
-                    //_eManager.audio =
+                    //EditorGUILayout.ObjectField(audioProp, typeof(AudioClip), new GUIContent("Audio File"));
+                    EditorGUILayout.ObjectField(audioProp, typeof(AudioClip), new GUIContent("Audio File"));
+
+                    _eManager.isTriggered = isTriggeredProp.boolValue;
+                    _eManager.audio = (AudioClip)audioProp.objectReferenceValue;
+
                     break;
                 }
             case EventManager.EventType.Move:
@@ -61,7 +67,11 @@ public class EventManagerEditor : Editor
                     EditorGUILayout.PropertyField(isTriggeredProp, new GUIContent("Event Triggered"));
                     EditorGUILayout.PropertyField(targetPosProp, new GUIContent("Target Position"));
                     EditorGUILayout.PropertyField(moveSpdProp, new GUIContent("Movement Speed"));
-                    //_eManager.targetPos = 
+                    
+                    _eManager.isTriggered = isTriggeredProp.boolValue;
+                    _eManager.targetPos = targetPosProp.vector3Value;
+                    _eManager.moveSpd = moveSpdProp.floatValue;
+
                     break;
                 }
         }
