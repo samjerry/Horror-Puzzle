@@ -30,15 +30,16 @@ public class EventManager : MonoBehaviour
     /// <summary>
     /// Move Event
     /// </summary>
-    private Vector3 _curPos;
     public Vector3 targetPos;
     public float moveSpd;
 
 
     void Start()
     {
-        _light = transform.GetChild(0).GetComponent<Light>();
-        _curPos = transform.position;
+        if (eType == EventType.Light)
+        {
+            _light = transform.GetChild(0).GetComponent<Light>();
+        }
     }
 
     public void ToggleLight()
@@ -51,6 +52,6 @@ public class EventManager : MonoBehaviour
     {
         isTriggered = !isTriggered;
         Debug.Log("Initiate MoveObject()");
-        _curPos = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * moveSpd);
+        transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * moveSpd);
     }
 }
