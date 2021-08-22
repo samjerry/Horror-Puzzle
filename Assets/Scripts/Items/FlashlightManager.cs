@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FlashlightManager : MonoBehaviour
 {
+    [SerializeField] EventManager _lightManager;
+
     private bool _isHeld = true;
 
     [SerializeField] private GameObject _lightSource;
@@ -12,7 +14,7 @@ public class FlashlightManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && _isHeld)
         {
-            _lightSource.GetComponent<Light>().enabled = !_lightSource.GetComponent<Light>().enabled;
+            _lightManager.ToggleLight();
         }
     }
 }

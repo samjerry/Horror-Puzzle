@@ -6,18 +6,18 @@ using UnityEngine;
 public class GetEventReceivers : MonoBehaviour
 {
     public GameObject[] eventReceivers;
-    private ButtonEvent interactable;
+    private ButtonEvent _interactable;
 
     void Start()
     {
-        interactable = GetComponent<ButtonEvent>();
-        int listenerCount = interactable.ButtonEventHandler.GetPersistentEventCount();
+        _interactable = GetComponent<ButtonEvent>();
+        int listenerCount = _interactable.ButtonEventHandler.GetPersistentEventCount();
 
         eventReceivers = new GameObject[listenerCount];
 
         for (int i = 0; i < listenerCount; i++)
         {
-            eventReceivers[i] = GameObject.Find(interactable.ButtonEventHandler.GetPersistentTarget(i).name);
+            eventReceivers[i] = GameObject.Find(_interactable.ButtonEventHandler.GetPersistentTarget(i).name);
             Debug.Log(eventReceivers[i]);
         }
     }

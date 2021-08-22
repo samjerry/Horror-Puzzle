@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.003999847, g: 0.00021818459, b: 0.000000051890535, a: 1}
+  m_IndirectSpecularColor: {r: 0.4460743, g: 0.49056733, b: 0.5461346, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 70282157}
   - component: {fileID: 70282156}
   - component: {fileID: 70282162}
-  - component: {fileID: 70282161}
   - component: {fileID: 70282160}
   m_Layer: 7
   m_Name: Button
@@ -239,19 +238,6 @@ MonoBehaviour:
   - {fileID: 1088256902}
   - {fileID: 154109560}
   - {fileID: 806572966}
---- !u!114 &70282161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 70282155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0130221f57995442a4cdaff79b1c9fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 143182804}
 --- !u!114 &70282162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,7 +254,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 476606571}
-        m_TargetAssemblyTypeName: LightManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: EventManager, Assembly-CSharp
         m_MethodName: ToggleLight
         m_Mode: 1
         m_Arguments:
@@ -280,7 +266,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1088256903}
-        m_TargetAssemblyTypeName: LightManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: EventManager, Assembly-CSharp
         m_MethodName: ToggleLight
         m_Mode: 1
         m_Arguments:
@@ -292,7 +278,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 154109561}
-        m_TargetAssemblyTypeName: LightManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: EventManager, Assembly-CSharp
         m_MethodName: ToggleLight
         m_Mode: 1
         m_Arguments:
@@ -304,7 +290,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 806572967}
-        m_TargetAssemblyTypeName: LightManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: EventManager, Assembly-CSharp
         m_MethodName: ToggleLight
         m_Mode: 1
         m_Arguments:
@@ -344,7 +330,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -434,9 +420,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 154109560}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e535ca7e896112418833884c23b1907, type: 3}
+  m_Script: {fileID: 11500000, guid: ff14c056faedbdb4fb71f83df4fc036d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _eType: 0
 --- !u!4 &154109562
 Transform:
   m_ObjectHideFlags: 0
@@ -591,7 +578,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -778,9 +765,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 476606569}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e535ca7e896112418833884c23b1907, type: 3}
+  m_Script: {fileID: 11500000, guid: ff14c056faedbdb4fb71f83df4fc036d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _eType: 0
 --- !u!1 &693684113 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3670852637258439556, guid: 54f5a5ad8ac7b6c42839ad751d90e856, type: 3}
@@ -812,9 +800,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 806572966}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e535ca7e896112418833884c23b1907, type: 3}
+  m_Script: {fileID: 11500000, guid: ff14c056faedbdb4fb71f83df4fc036d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _eType: 0
 --- !u!4 &806572968
 Transform:
   m_ObjectHideFlags: 0
@@ -952,9 +941,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1088256902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e535ca7e896112418833884c23b1907, type: 3}
+  m_Script: {fileID: 11500000, guid: ff14c056faedbdb4fb71f83df4fc036d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _eType: 0
 --- !u!4 &1088256904
 Transform:
   m_ObjectHideFlags: 0
@@ -1074,7 +1064,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1153,7 +1143,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1210,13 +1200,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322535355}
-  m_LocalRotation: {x: -0.7660445, y: 0, z: 0, w: 0.64278764}
+  m_LocalRotation: {x: 0.135975, y: 0, z: 0, w: 0.9907123}
   m_LocalPosition: {x: 0, y: 4.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -100, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 15.63, y: 0, z: 0}
 --- !u!1 &1517627335 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2249891021191531236, guid: 54f5a5ad8ac7b6c42839ad751d90e856, type: 3}
@@ -1515,7 +1505,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
