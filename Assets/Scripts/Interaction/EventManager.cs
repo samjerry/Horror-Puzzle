@@ -2,18 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum EventType { Light, Move, Unlock, Audio }
+
 public class EventManager : MonoBehaviour
 {
-    [SerializeField] EventType _eType;
+    public enum EventType
+    { 
+        Light, 
+        Move, 
+        Unlock, 
+        Audio 
+    }
+
+    public EventType eType;
 
     private Light _light;
 
-    private Transform _curPos;
+    public AudioSource audio;
+
+    private Vector3 _curPos;
+    public Vector3 targetPos;
+
+    public bool isTriggered;
 
     void Start()
     {
         _light = transform.GetChild(0).GetComponent<Light>();
+        _curPos = transform.position;
     }
 
     public void ToggleLight() => _light.enabled = !_light.enabled;
