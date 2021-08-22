@@ -6,23 +6,23 @@ using System;
 [CustomEditor(typeof(GetEventReceivers))]
 class DrawInteractionEditor : Editor
 {
-    Transform targetObject;
+    Transform _targetObject;
     GameObject[] _interactables;
 
     private void OnEnable()
     {
-        targetObject = (target as GetEventReceivers).transform;
+        _targetObject = (target as GetEventReceivers).transform;
     }
 
     void OnSceneGUI()
     {
         Handles.color = Color.yellow;
 
-        _interactables = (GameObject[])targetObject.GetComponent<GetEventReceivers>().eventReceivers.Clone();
+        _interactables = (GameObject[])_targetObject.GetComponent<GetEventReceivers>().eventReceivers.Clone();
 
         for (int i = 0; i < _interactables.Length; i++)
         {
-            Handles.DrawLine(targetObject.position, _interactables[i].transform.position);
+            Handles.DrawLine(_targetObject.position, _interactables[i].transform.position);
         }
     }
 }

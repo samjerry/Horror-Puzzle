@@ -16,9 +16,9 @@ public class EventManager : MonoBehaviour
         _light = transform.GetChild(0).GetComponent<Light>();
     }
 
-    public void ToggleLight()
+    public void ToggleLight() => _light.enabled = !_light.enabled;
+    /*
     {
-        /*
         if (_light.intensity == 1f)
         {
             Debug.Log("off");
@@ -29,6 +29,6 @@ public class EventManager : MonoBehaviour
             Debug.Log("on");
             _light.intensity = 1;
         } 
-        */
     }
+    */
 }
