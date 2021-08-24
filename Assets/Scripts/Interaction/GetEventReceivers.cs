@@ -6,11 +6,11 @@ using UnityEngine;
 public class GetEventReceivers : MonoBehaviour
 {
     public GameObject[] eventReceivers;
-    private ButtonEvent _interactable;
+    private TriggerEvent _interactable;
 
     void Start()
     {
-        _interactable = GetComponent<ButtonEvent>();
+        _interactable = GetComponent<TriggerEvent>();
         int listenerCount = _interactable.triggerEventHandler.GetPersistentEventCount();
 
         eventReceivers = new GameObject[listenerCount];
