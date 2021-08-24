@@ -46,7 +46,6 @@ public class EventManager : MonoBehaviour
 
         if (eType == EventType.Audio)
         {
-            Debug.Log(_source);
             _source = this.gameObject;
             _aSource = _source.GetComponent<AudioSource>();
             _aSource.clip = audio;
@@ -68,7 +67,6 @@ public class EventManager : MonoBehaviour
 
     public void PlayAudio()
     {
-        Debug.Log(_aSource);
         _aSource.Play();
     }
 
