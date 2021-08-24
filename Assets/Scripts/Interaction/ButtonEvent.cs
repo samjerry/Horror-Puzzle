@@ -5,10 +5,10 @@ using UnityEngine.Events;
 
 public class ButtonEvent : MonoBehaviour
 {
-    public UnityEvent ButtonEventHandler;
+    public UnityEvent triggerEventHandler;
 
     public void InvokeEvent()
     {
-        ButtonEventHandler.Invoke();
+        triggerEventHandler.Invoke();
     }
 }

@@ -11,13 +11,13 @@ public class GetEventReceivers : MonoBehaviour
     void Start()
     {
         _interactable = GetComponent<ButtonEvent>();
-        int listenerCount = _interactable.ButtonEventHandler.GetPersistentEventCount();
+        int listenerCount = _interactable.triggerEventHandler.GetPersistentEventCount();
 
         eventReceivers = new GameObject[listenerCount];
 
         for (int i = 0; i < listenerCount; i++)
         {
-            eventReceivers[i] = GameObject.Find(_interactable.ButtonEventHandler.GetPersistentTarget(i).name);
+            eventReceivers[i] = GameObject.Find(_interactable.triggerEventHandler.GetPersistentTarget(i).name);
             Debug.Log(eventReceivers[i]);
         }
     }
